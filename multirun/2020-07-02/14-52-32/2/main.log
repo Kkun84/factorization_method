@@ -1,0 +1,12 @@
+[2020-07-02 14:56:21,428][__main__][INFO] - 
+corner_count: 500
+video: white_can.avi
+
+[2020-07-02 14:56:21,430][tracking][INFO] - width=720
+[2020-07-02 14:56:21,430][tracking][INFO] - height=480
+[2020-07-02 14:56:21,430][tracking][INFO] - frame_num=137
+[2020-07-02 14:56:27,718][__main__][INFO] - coord_list.shape=(137, 325, 2)
+[2020-07-02 14:56:27,719][__main__][INFO] - frame_list.shape=(137, 480, 720, 3)
+[2020-07-02 14:56:27,719][__main__][INFO] - os.mkdir('tracked_images')
+[2020-07-02 14:56:27,719][__main__][INFO] - Save tracked images.
+[2020-07-02 14:56:27,732][__main__][INFO] - os.mkdir('3d_points_images')

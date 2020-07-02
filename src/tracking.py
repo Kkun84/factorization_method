@@ -9,20 +9,22 @@ logger = getLogger(__name__)
 
 
 def tracking(filepath, corner_count):
-    cap = cv2.VideoCapture(filepath)
+    video = cv2.VideoCapture(filepath)
 
-    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    frame_num = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    frame_num = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = video.get(cv2.CAP_PROP_FPS)
 
     logger.info(f"width={width}")
     logger.info(f"height={height}")
     logger.info(f"frame_num={frame_num}")
 
     log = np.empty([frame_num, corner_count, 2])
+    frame_list = []
     once_flag = True
     for count in range(frame_num):
-        _, frame = cap.read()
+        _, frame = video.read()
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         if(once_flag):
             once_flag = False
@@ -53,9 +55,11 @@ def tracking(filepath, corner_count):
             cv2.circle(frame, (x, y), 3, [0x00]*0, -1)
             cv2.circle(frame, (x, y), 1, [0xff]*3, -1)
         cv2.imshow('corner', frame)
-        cv2.waitKey(1000 // 60)
-    cap.release()
+        frame_list.append(frame)
+        cv2.waitKey(round(1000 / fps))
+    video.release()
     cv2.destroyAllWindows()
+    frame_list = np.array(frame_list)
 
     coord_list = []
     for i in range(frame_num):
@@ -66,4 +70,4 @@ def tracking(filepath, corner_count):
         coord_list += [coords]
     coord_list = np.array(coord_list)
 
-    return coord_list
+    return coord_list, frame_list

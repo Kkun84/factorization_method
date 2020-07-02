@@ -1,0 +1,12 @@
+[2020-07-02 14:54:17,522][__main__][INFO] - 
+corner_count: 500
+video: soccer_ball.avi
+
+[2020-07-02 14:54:17,524][tracking][INFO] - width=720
+[2020-07-02 14:54:17,524][tracking][INFO] - height=480
+[2020-07-02 14:54:17,524][tracking][INFO] - frame_num=90
+[2020-07-02 14:54:21,676][__main__][INFO] - coord_list.shape=(90, 341, 2)
+[2020-07-02 14:54:21,676][__main__][INFO] - frame_list.shape=(90, 480, 720, 3)
+[2020-07-02 14:54:21,676][__main__][INFO] - os.mkdir('tracked_images')
+[2020-07-02 14:54:21,676][__main__][INFO] - Save tracked images.
+[2020-07-02 14:54:21,688][__main__][INFO] - os.mkdir('3d_points_images')

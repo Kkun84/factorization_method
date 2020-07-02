@@ -1,0 +1,12 @@
+[2020-07-02 14:52:32,914][__main__][INFO] - 
+corner_count: 500
+video: milk_pack.avi
+
+[2020-07-02 14:52:32,917][tracking][INFO] - width=720
+[2020-07-02 14:52:32,917][tracking][INFO] - height=480
+[2020-07-02 14:52:32,917][tracking][INFO] - frame_num=124
+[2020-07-02 14:52:38,557][__main__][INFO] - coord_list.shape=(124, 206, 2)
+[2020-07-02 14:52:38,557][__main__][INFO] - frame_list.shape=(124, 480, 720, 3)
+[2020-07-02 14:52:38,557][__main__][INFO] - os.mkdir('tracked_images')
+[2020-07-02 14:52:38,557][__main__][INFO] - Save tracked images.
+[2020-07-02 14:52:38,600][__main__][INFO] - os.mkdir('3d_points_images')
